@@ -21,7 +21,7 @@ classdef DataSet
             files = dir(fullfile(o.path, '*.nii'));
             o.count = length(files);
             
-            t_path = strcat('./targets.csv');
+            t_path = strcat(o.path, 'targets_health.csv');
             if(exist(t_path, 'file'))
                 o.targets = csvread(t_path);
                 o.sumsq = var(o.targets)*o.count-1;
